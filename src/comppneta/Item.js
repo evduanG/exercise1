@@ -1,15 +1,22 @@
-
 import MenuButtons from "./MenuButtons";
+import "./Item.css";
 
-const Item =(props)=>{
-    const addToCart =()=> {
-        props.addToCartById(props.id);
-        console.log("addToCartById is click id: " +props.id)
-    } 
-    // const temp = ()=> {}
-    return  <div className  = "Item">
-        {props.itemName}
-        <MenuButtons addToCartCB ={addToCart}  />
-        </div>
-}
+const Item = ({ id, addToCartById, quantity, itemName, renoveItmeById }) => {
+  const addToCart = () => {
+    addToCartById(id);
+  };
+
+  return (
+    <div className="Item">
+      {itemName}
+      <MenuButtons
+        addToCartCB={addToCart}
+        quantity={quantity}
+        id={id}
+        renoveItmeById={renoveItmeById}
+        name={itemName}
+      />
+    </div>
+  );
+};
 export default Item;

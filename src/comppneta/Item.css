@@ -1,0 +1,14 @@
+.Item{
+    background: aliceblue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    margin: 15px;
+    border-style: solid;
+    border-color: rgba(0, 255, 106, 0.541);
+}
+
+.Item p{
+    margin: 50px;
+}

@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.App .grid{
+    margin: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}

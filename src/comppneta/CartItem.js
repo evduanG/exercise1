@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const CartItem = (props)=>{
-  const [count, setCount] = useState(1);
+const CartItem = ({ id, renoveItmeById, quantity, name }) => {
+  const [count, setCount] = useState(quantity);
 
-    function setCountWreap(i_NewCount) {
-      i_NewCount == 0 ? props.renoveItmeById(props.id) :
-        setCount(Math.max(0, i_NewCount))
+  function setCountWreap(i_NewCount) {
+    setCount(Math.max(0, i_NewCount));
+
+    if (i_NewCount == 0) {
+      renoveItmeById(id);
     }
+  }
 
   return (
-    <div className='Menu-Buttons'>
-      <p>{props.name}</p>
+    <div className="Menu-Buttons">
+      <p>{name}</p>
       <button onClick={() => setCountWreap(count + 1)}>+</button>
       {count}
       <button onClick={() => setCountWreap(count - 1)}>-</button>
     </div>
   );
-}
+};
 export default CartItem;
